@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130189125-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130189125-1');
+     </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../../images/favicon2.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+    crossorigin="anonymous">
+  <title>Maze Game</title>
+  <link href="maze.css" rel="stylesheet" />
+  <script src="courses.js"></script>
+  <script src="maze.js"></script>
+</head>
+
+<body>
+  <div class="titleContainer section">
+    <div class="titleText h3 section-width">Find your way out <span class="h1 text--bold">Maze Craze</span></div>
+  </div>
+  <div class="section">
+    <div class="section-body section-width flex-container">
+      <div class="gameOptions sm--6 lg--2">
+        <div class="mazeSettings">
+          <div class="mazeSettings-title text--bold text--uppercase h4">Maze Options</div>
+          <div class="mazeSettings-control flex-container">
+            <button id="reduceLevel" class="sm--1 btn btn--transparent" onclick="levelChange('down')" disabled>
+              <i class="fas fa-minus"></i>
+              <span class="screen-reader-text">Reduce Level</span>
+            </button>
+            <div class="sm--4">
+              <div class="mazeLevels flex-container">
+                <div class="level level-0 sm--2 active"></div>
+                <div class="level level-1 sm--2"></div>
+                <div class="level level-2 sm--2"></div>
+              </div>
+              <div class="text--uppercase controlLabel">Level</div>
+            </div>
+            <button id="increaseLevel" class="sm--1 btn btn--transparent" onclick="levelChange('up')">
+              <i class="fas fa-plus"></i>
+              <span class="screen-reader-text">Reduce Level</span>
+            </button>
+          </div>
+          <div class="mazeSettings-control flex-container">
+            <button id="reduceObstacles" class="sm--1 btn btn--transparent" onclick="obstacleChange('down')" disabled>
+              <i class="fas fa-minus"></i>
+              <span class="screen-reader-text">Reduce Obstacles</span>
+            </button>
+            <div class="sm--4">
+              <div class="mazeObstacles h2 text--bold">
+                0
+              </div>
+              <div class="text--uppercase controlLabel">Obstacles</div>
+            </div>
+            <button id="increaseObstacles" class="sm--1 btn btn--transparent" onclick="obstacleChange('up')">
+              <i class="fas fa-plus"></i>
+              <span class="screen-reader-text">Reduce Obstacles</span>
+            </button>
+          </div>
+          <button class="btn--transparent btn-secondary text--uppercase" onclick="restartGame()">Start Over</button>
+        </div>
+
+        <div class="arrowControls arrowControls--largeWidth">
+          <button class="arrow--up btn" onclick="movePerson('up')">
+            <i class="fas fa-caret-up fa-2x"></i>
+            <span class="screen-reader-text">Up</span>
+          </button>
+          <div class="flex-container">
+            <button class="arrow--left btn" onclick="movePerson('left')">
+              <i class="fas fa-caret-left fa-2x"></i>
+              <span class="screen-reader-text">Left</span>
+            </button>
+            <button class="arrow--down btn" onclick="movePerson('down')">
+              <i class="fas fa-caret-down fa-2x"></i>
+              <span class="screen-reader-text">Down</span>
+            </button>
+            <button class="arrow--right btn" onclick="movePerson('right')">
+              <i class="fas fa-caret-right fa-2x"></i>
+              <span class="screen-reader-text">Right</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="sm--6 lg--4 relative">
+        <div id="mazeContainer" class="mazeContainer">
+          <div id="toast" class="toastMessage h2 text--bold text--uppercase d--hidden">Congrats!</div>
+          <div id="person" class="startingPos">
+            <span class="eye left"></span>
+            <span class="eye right"></span>
+          </div>
+          <div id="mazeBody" class="mazeBody"></div>
+        </div>
+        <div class="arrowControls arrowControls--mobileWidth">
+          <button class="arrow--up btn" onclick="movePerson('up')">
+            <i class="fas fa-caret-up fa-2x"></i>
+            <span class="screen-reader-text">Up</span>
+          </button>
+          <div class="flex-container">
+            <button class="arrow--left btn" onclick="movePerson('left')">
+              <i class="fas fa-caret-left fa-2x"></i>
+              <span class="screen-reader-text">Left</span>
+            </button>
+            <button class="arrow--down btn" onclick="movePerson('down')">
+              <i class="fas fa-caret-down fa-2x"></i>
+              <span class="screen-reader-text">Down</span>
+            </button>
+            <button class="arrow--right btn" onclick="movePerson('right')">
+              <i class="fas fa-caret-right fa-2x"></i>
+              <span class="screen-reader-text">Right</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
